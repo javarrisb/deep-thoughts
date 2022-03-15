@@ -1,9 +1,9 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
-const { authMiddleware } = require('./server/utils/auth');
 const path = require('path');
 
 const { typeDefs, resolvers } = require('./server/schemas');
+const { authMiddleware } = require('./server/utils/auth');
 const db = require('./server/config/connection');
 
 const PORT = process.env.PORT || 3001;
@@ -20,7 +20,7 @@ const startServer = async () => {
   console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
 };
 
-startServer();
+startServer()
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
