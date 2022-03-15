@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { useMutation } from '@apollo/client';
 import { ADD_THOUGHT } from '../../utils/mutations';
 import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
@@ -59,7 +60,8 @@ const ThoughtForm = () => {
 
     return (
         <div>
-            <p className={`m-0 ${characterCount === 280 ? 'text-error' : ''}`}>
+            <p
+                className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}>
                 Character Count: 0/280
                 {error && <span className="ml-2">Something went wrong...</span>}
             </p>
